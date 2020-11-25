@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <form class="" action="/" method="post">
+    <label for="cityInput">City Name:</label>
+    <input id="cityInput" type="text" name="cityName" value="">
+    <button type="submit">Go</button>
+  </form>
+  <script>
+      var query = location.search.substring(1);
+      var vars = query.split('&');
+      for (var i = 0; i < vars.length; i++) {
+        console.log(query);
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == 'cityName') {
+          document.querySelector("#cityInput").setAttribute("value", decodeURIComponent(pair[1]));
+          console.log(decodeURIComponent(pair[1]));
+        }
+      }
+  </script>
+</body>
+
+</html>

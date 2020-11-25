@@ -18,6 +18,7 @@ A back-end program, that can forward the user's request to a weather API server,
  
  Get your own API key (sry, I won't share mine... )
  > Register here: https://openweathermap.org/api
+ 
  > Crate your own "api-keys.js" file based on "api-keys-example.js", and use your own API key.
  
  Run program: 

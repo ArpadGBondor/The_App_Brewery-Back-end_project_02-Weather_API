@@ -55,17 +55,30 @@ app.post('/', function(req, res) {
       log('Description: ', weatherData.weather[0].description);
 
       res.write('<html>');
-      res.write('<head>');
-      res.write('<meta charset="utf-8">');
-      res.write('<title>Weather in ' + req.body.cityName + '</title>');
-      res.write('</head>');
-      res.write('<body>');
-      res.write('<h1>Weather in ' + req.body.cityName + '</h1>');
-      res.write('<p> The temperature is ' + weatherData.main.temp + '°C. </p>');
-      res.write('<p> The weather is currently ' +
-        weatherData.weather[0].description + '. </p>');
-      res.write('<img src = "http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png">');
-      res.write('</body>');
+        res.write('<head>');
+          res.write('<meta charset="utf-8">');
+          res.write('<title>Weather in ' + req.body.cityName + '</title>');
+          res.write('<style media="screen">');
+            // Challenge footer style
+            res.write(' .attribution { font-size: 11px; text-align: center; margin: 0;}');
+            res.write(' .attribution a { color: hsl(228, 45%, 44%); }');
+          res.write('</style>');
+          // Bootstrap
+          res.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">');
+        res.write('</head>');
+        res.write('<body class="text-center">');
+          res.write('<h1>Weather in ' + req.body.cityName + '</h1>');
+          res.write('<div class="mt-5 mb-5">');
+            res.write('<p> The temperature is ' + weatherData.main.temp + '°C. </p>');
+            res.write('<p> The weather is currently ' +
+              weatherData.weather[0].description + '. </p>');
+            res.write('<img src = "http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png">');
+          res.write('</div>');
+          res.write('<footer>');
+            res.write('<p class="attribution">Challenge created by <a href="https://www.appbrewery.co/" target="_blank">The App Brewery</a>.</p>');
+            res.write('<p class="attribution">Coded by <a href="https://arpadgbondor.github.io/CV/" target="_blank">Árpád Gábor Bondor</a> in 2020.</p>');
+          res.write('</footer>');
+        res.write('</body>');
       res.write('</html>');
       res.send();
     });

@@ -4,13 +4,21 @@
 <head>
   <meta charset="utf-8">
   <title>Weather App</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style media="screen">
+    /* Challenge footer */
+    .attribution { font-size: 11px; text-align: center; margin: 0;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
 
-<body>
-  <form class="" action="/" method="post">
-    <label for="cityInput">City Name:</label>
-    <input id="cityInput" type="text" name="cityName" value="">
-    <button type="submit">Go</button>
+<body class="text-center">
+  <h1>Weather App</h1>
+  <form class="form mt-5 mb-5" action="/" method="post">
+    <label class="label" for="cityInput">City Name:</label>
+    <input class="input" id="cityInput" type="text" name="cityName" value="">
+    <button class="btn btn-primary" type="submit">Go</button>
   </form>
   <script>
       var query = location.search.substring(1);
@@ -24,6 +32,10 @@
         }
       }
   </script>
+  <footer>
+    <p class="attribution">Challenge created by <a href="https://www.appbrewery.co/" target="_blank">The App Brewery</a>.</p>
+    <p class="attribution">Coded by <a href="https://arpadgbondor.github.io/CV/" target="_blank">Árpád Gábor Bondor</a> in 2020.</p>
+  </footer>
 </body>
 
 </html>

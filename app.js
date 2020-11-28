@@ -57,6 +57,7 @@ app.post('/', function(req, res) {
       res.write('<html>');
       res.write('<head>');
       res.write('<meta charset="utf-8">');
+      res.write('<title>Weather in ' + req.body.cityName + '</title>');
       res.write('</head>');
       res.write('<body>');
       res.write('<h1>Weather in ' + req.body.cityName + '</h1>');

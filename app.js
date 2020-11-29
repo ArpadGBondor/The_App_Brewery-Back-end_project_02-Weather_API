@@ -88,7 +88,7 @@ app.post('/', function(req, res) {
   });
 });
 
-app.listen(port, () => log('Server is running on http://localhost:' + port));
+app.listen(port, () => log('Server is running on http://localhost:' + port + '/?cityName=Pitlochry'));
 
 /**
  * log - colorfull console.log() for "description: object" style logging

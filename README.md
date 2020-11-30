@@ -1,4 +1,4 @@
-# The_App_Brewery-Back-end_project_02-Weather_API
+# The App Brewery - Back-end project 02 - Weather API
 
 ## Udemy - The Complete 2020 Web Development Bootcamp
 ### Section 20: APIs - Application Programming Interfaces

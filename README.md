@@ -19,7 +19,7 @@ A back-end program, that can forward the user's request to a weather API server,
  Get your own API key (sry, I won't share mine... )
  > Register here: https://openweathermap.org/api
 
- Create a file named '.env' and set this [enviroment variables](https://www.npmjs.com/package/dotenv):
+ Create a file named '.env' and set this [enviroment variable](https://www.npmjs.com/package/dotenv):
  > WEATHER_API_KEY=
 
  Run program: 

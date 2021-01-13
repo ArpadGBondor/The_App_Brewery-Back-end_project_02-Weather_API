@@ -1,4 +1,5 @@
 /* eslint linebreak-style: ["error", "windows"]*/
+require('dotenv').config();
 
 const consoleStamp = require('console-stamp');
 consoleStamp(console, {
@@ -13,7 +14,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const https = require('https');
 const util = require('util');
-const apiKeys = require('./api-keys');
 
 const app = express();
 const port = 3000;
@@ -24,35 +24,35 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
-  if (Object.prototype.hasOwnProperty.call(req.query, "cityName")){
-    log("query: ", req.query);
-  }
+  // if (Object.prototype.hasOwnProperty.call(req.query, "cityName")){
+  //   log("query: ", req.query);
+  // }
 });
 app.post('/', function(req, res) {
-  log('req.body.cityName: ', req.body.cityName);
-
-  const appID = apiKeys.weatherAPI();
+  // log('req.body.cityName: ', req.body.cityName);
+  //
+  const appID = process.env.WEATHER_API_KEY;
   const query = encodeURI(req.body.cityName);
   const units = 'metric';
   const apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' + query + '&appid=' + appID + '&units=' + units;
 
-  log('HTTPS GET: ', apiurl);
+  // log('HTTPS GET: ', apiurl);
   https.get(apiurl, function(response) {
-    log('Status code: ', response.statusCode);
+    // log('Status code: ', response.statusCode);
 
     const answer = [];
 
     response.on('data', function(chunk) {
       answer.push(chunk);
-      log('Data chunk: ', chunk);
+      // log('Data chunk: ', chunk);
     });
 
     response.on('end', function() {
       const data = answer.join('');
       const weatherData = JSON.parse(data);
-      log('Data object: ', weatherData);
-      log('Temperature: ', weatherData.main.temp);
-      log('Description: ', weatherData.weather[0].description);
+      // log('Data object: ', weatherData);
+      // log('Temperature: ', weatherData.main.temp);
+      // log('Description: ', weatherData.weather[0].description);
 
       res.write('<html>');
         res.write('<head>');
@@ -83,7 +83,7 @@ app.post('/', function(req, res) {
       res.send();
     });
   }).on('error', function(error) {
-    log('Error: ', error);
+    // log('Error: ', error);
     console.error(error.message);
   });
 });

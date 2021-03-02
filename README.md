@@ -1,6 +1,6 @@
 # The App Brewery - Back-end project 02 - Weather API
 
-## Udemy - The Complete 2020 Web Development Bootcamp
+## Udemy - [Dr. Angela Yu - The Complete 2020 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)
 ### Section 20: APIs - Application Programming Interfaces
 A back-end program, that can forward the user's request to a weather API server, and return the answer to the user.
  - Node.js
